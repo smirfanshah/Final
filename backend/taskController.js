@@ -1,6 +1,5 @@
-const Task = require('./models/task'); // Import Task model
+const Task = require('./models/task'); 
 
-// Create a new task
 const createTask = async (req, res) => {
   const { name, description, dueDate, userId } = req.body;
   const task = new Task({ name, description, dueDate, userId });
@@ -12,7 +11,7 @@ const createTask = async (req, res) => {
   }
 };
 
-// Get all tasks for a user
+
 const getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({ userId: req.params.userId });
@@ -45,7 +44,6 @@ const updateTask = async (req, res) => {
   }
 };
 
-// Delete a task
 const deleteTask = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);

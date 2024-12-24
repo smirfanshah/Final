@@ -7,7 +7,7 @@ const Navbar = () => {
         <h1 className="text-2xl font-bold">MyToDo</h1>
         <ul className="flex space-x-4">
           <li><a href="/login" className="hover:text-blue-400">Login</a></li>
-          <li><a href="/tasks" className="hover:text-blue-400">Tasks</a></li> {/* Link to the tasks page */}
+          <li><a href="/tasks" className="hover:text-blue-400">Tasks</a></li> 
         </ul>
       </div>
     </nav>

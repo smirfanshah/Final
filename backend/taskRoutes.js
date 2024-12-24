@@ -2,7 +2,7 @@ const express = require('express');
 const Task = require('./models/task'); // Import Task model
 const router = express.Router();
 
-// Create a new task
+
 router.post('/', async (req, res) => {
   const { name, description, dueDate, userId } = req.body;
   const task = new Task({ name, description, dueDate, userId });
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get all tasks for a user
+
 router.get('/:userId', async (req, res) => {
   try {
     const tasks = await Task.find({ userId: req.params.userId });
@@ -24,7 +24,6 @@ router.get('/:userId', async (req, res) => {
   }
 });
 
-// Update a task
 router.patch('/:id', async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'description', 'dueDate'];
@@ -47,7 +46,6 @@ router.patch('/:id', async (req, res) => {
   }
 });
 
-// Delete a task
 router.delete('/:id', async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);
