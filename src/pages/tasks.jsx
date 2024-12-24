@@ -67,9 +67,9 @@ const Tasks = () => {
           Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
         },
       });
-      setTasks([...tasks, response.data]); // Add the new task to the list
-      setEditingTaskId(null); // Reset editing state
-      setEditingTask({ name: '', description: '', dueDate: '' }); // Reset editing task details
+      setTasks([...tasks, response.data]);
+      setEditingTaskId(null); 
+      setEditingTask({ name: '', description: '', dueDate: '' });
     } catch (err) {
       setError(`Failed to update task: ${err.response ? err.response.data : err.message}`);
     }
